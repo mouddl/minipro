@@ -71,7 +71,7 @@ def plot_plain_grid(grid, start, goal, title, filename):
     ax = plt.gca()
     ax.set_xticks(np.arange(-0.5, grid.shape[1], 1))
     ax.set_yticks(np.arange(-0.5, grid.shape[0], 1))
-    ax.grid(color='white', linestyle='-', linewidth=2)
+    ax.grid(color='white', linewidth=2)
     ax.set_xticklabels([])
     ax.set_yticklabels([])
 
@@ -103,7 +103,7 @@ def plot_all_paths(grid, paths_dict, start, goal, title, filename):
     ax = plt.gca()
     ax.set_xticks(np.arange(-0.5, grid.shape[1], 1))
     ax.set_yticks(np.arange(-0.5, grid.shape[0], 1))
-    ax.grid(color='black', linestyle='-', linewidth=2)
+    ax.grid(color='black', linewidth=2)
     ax.set_xticklabels([])
     ax.set_yticklabels([])
 
@@ -113,7 +113,7 @@ def plot_all_paths(grid, paths_dict, start, goal, title, filename):
              ha='center', va='center', bbox=dict(boxstyle="round,pad=0.5", facecolor='white', alpha=0.95))
 
     colors = {'UCS': 'blue', 'Greedy': 'orange', 'A*': 'red'}
-    linestyles = {'UCS': '--', 'Greedy': ':', 'A*': '-'}
+    linestyles = {'UCS': '-', 'Greedy': '-', 'A*': '-'}
     linewidths = {'UCS': 5, 'Greedy': 4.5, 'A*': 6}
 
     offsets = {'UCS': (-0.15, -0.15), 'Greedy': (0, 0), 'A*': (0.15, 0.15)}
