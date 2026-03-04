@@ -1,0 +1,10 @@
+Grille,Algorithme,Coût,Nœuds développés,Nœuds testés,Temps (s),Longueur chemin
+easy,UCS,8,32,33,0.00015,9
+easy,Greedy,8,9,19,4e-05,9
+easy,A*,8,25,32,9e-05,9
+medium,UCS,12,52,53,0.00018,13
+medium,Greedy,12,13,27,0.00014,13
+medium,A*,12,41,52,0.0003,13
+hard,UCS,16,78,79,0.00085,17
+hard,Greedy,18,20,38,0.00016,19
+hard,A*,16,63,76,0.00025,17
