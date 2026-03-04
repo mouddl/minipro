@@ -33,17 +33,36 @@ def create_grids():
     goals['easy'] = (4, 4)
 
     grid_med = np.zeros((8, 8), dtype=object)
-    grid_med[3, 2:6] = 1
-    grid_med[5, 1:4] = 1
+
+    grid_med[3, 2:5] = 1
+    grid_med[5, 1:3] = 1
     grid_med[2, 5] = 1
+
+    grid_med[6, 3] = 1
+    grid_med[5, 6] = 1
+
+
     grid_med[6, 6] = 'G'
     grids['medium'] = grid_med
     starts['medium'] = (0, 0)
     goals['medium'] = (6, 6)
 
     grid_hard = np.zeros((10, 10), dtype=object)
-    walls = [(2,1),(2,2),(2,3),(2,4),(2,5),(4,3),(4,4),(4,5),(4,6),(4,7),
-             (6,2),(6,3),(6,4),(6,5),(6,6),(6,7),(6,8),(7,8),(8,8)]
+
+    walls = [
+        (7, 8),
+        (7, 9),
+        (4,8),
+        (4,7),
+        (4,6),
+        (2, 3),
+        (4, 5),
+        (6, 4),
+        (7, 8),
+        (9, 3),
+        (9, 6)
+    ]
+
     for x,y in walls:
         grid_hard[x,y] = 1
     grid_hard[8, 8] = 'G'
@@ -273,14 +292,4 @@ if __name__ == "__main__":
 
     df1 = experiment_1(grids, starts, goals)
     df2 = experiment_2(grids, starts, goals)
-
-    print("\n✅ CORRECTION TERMINÉE !")
-    print("Ouvre maintenant :")
-    print("   • grid_medium_all_algorithms.png")
-    print("   • grid_hard_all_algorithms.png")
-    print("Tu verras clairement :")
-    print("   - UCS en bleu tirets (--)")
-    print("   - Greedy en orange pointillés (:)")
-    print("   - A* en rouge plein (-)")
-    print("Même si UCS = A* (coût identique), les styles différents les rendent visibles.")
-    print("\nTout est prêt pour ton rapport ! 🎉")
+    print ("voir resultats  !")

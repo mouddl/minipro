@@ -2,11 +2,12 @@ import heapq
 import time
 import numpy as np
 from collections import defaultdict
-# --- Heuristique ---
+
+
 def manhattan(p, goal):
     return abs(p[0] - goal[0]) + abs(p[1] - goal[1])
 
-# --- Voisins accessibles ---
+
 def get_neighbors(grid, pos):
     x, y = pos
     neighbors = []
@@ -16,7 +17,7 @@ def get_neighbors(grid, pos):
             neighbors.append((nx, ny))
     return neighbors
 
-# --- A* (version minimale) ---
+
 def astar(grid, start, goal, heuristic=manhattan):
     start_time = time.time()
     open_set = []
@@ -27,7 +28,7 @@ def astar(grid, start, goal, heuristic=manhattan):
     f_score = defaultdict(lambda: float('inf'))
     f_score[start] = heuristic(start, goal)
 
-    # Statistics
+
     nodes_explored = 0
     nodes_tested = 0
 
@@ -35,7 +36,6 @@ def astar(grid, start, goal, heuristic=manhattan):
         _, current = heapq.heappop(open_set)
         nodes_explored += 1
         if current == goal:
-            # Reconstruct path
             path = [current]
             while current in came_from:
                 current = came_from[current]
@@ -58,18 +58,17 @@ def astar(grid, start, goal, heuristic=manhattan):
                 nodes_tested += 1
     return None
 
-# --- UCS (A* sans heuristique) ---
+
 def ucs(grid, start, goal):
     return astar(grid, start, goal, heuristic=lambda p, goal: 0)
 
-# --- Greedy (heuristique seule) ---
+
 def greedy(grid, start, goal):
     open_set = []
     heapq.heappush(open_set, (manhattan(start, goal), start))
     came_from = {}
     visited = set()
 
-    # Statistics
     nodes_explored = 0
     nodes_tested = 0
 
