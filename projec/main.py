@@ -14,7 +14,7 @@ from markov import (
     is_stochastic
 )
 
-sns.set_theme(style="whitegrid", palette="deep", font_scale=1.1)
+sns.set_theme(style="ticks", palette="deep", font_scale=1.1)
 os.makedirs("results", exist_ok=True)
 
 N_SIMULATIONS = 1000
