@@ -169,7 +169,7 @@ def experiment_1(grids, starts, goals):
         goal = goals[name]
 
         plot_plain_grid(grid, start, goal,
-                        f"Grille {name.upper()} — Tableau blanc",
+                        f"Grille {name.upper()}",
                         f"grid_{name}_plain.png")
 
         paths_dict = {}
